@@ -1,4 +1,5 @@
 #include <stdio.h> //for the full c expreiance lol
+#include <cstdlib>
 #include <math.h>
 
 int main()
@@ -25,6 +26,7 @@ int main()
         else {
             printf("%.2f C\n", CalF);  //if the end isn't 0 print 2 decimal points
         }
+        system("pause");
         return 0;
     }
 
@@ -39,6 +41,7 @@ int main()
         else {
             printf("%.2f F\n", CalC);  //if the end isn't 0 print 2 decimal points
         }
+        system("pause");
         return 0;
     }
 
