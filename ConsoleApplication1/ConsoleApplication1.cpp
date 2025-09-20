@@ -1,11 +1,27 @@
 #include <stdio.h> //for the full c expreiance lol
 #include <cstdlib>
 #include <math.h>
+char in;
+float num;
+
+float mathF(float num) {
+	float resultF;
+	float CalF = (num - 32) * .5556;
+    resultF = round((float)(100 * CalF)) / 100;
+	return resultF;
+}
+
+float mathC(float num) {
+	float resultC;
+    float CalC = num * 1.8 + 32;
+    resultC = round((float)(100 * CalC)) / 100;
+	return resultC;
+}
+
 
 int main()
 {
-    char in;
-    float num;
+    
     start: //for the goto statement 
     printf("Choose Celsius (C) or Fahrenheit (F) for the input number: ");
     scanf_s("%c", &in, 1);
@@ -19,13 +35,7 @@ int main()
     {
         printf("Enter the Tempature: ");
         scanf_s("%f", &num);
-        float CalF = (num - 32) * .5556;
-        if (round((float)(100 * CalF)) / 100) {   //checks if the conveted number has a zero at the end second decimal point
-            printf("%.1f C\n", CalF); // if the end is 0 then only print 1 decimal point
-        }
-        else {
-            printf("%.2f C\n", CalF);  //if the end isn't 0 print 2 decimal points
-        }
+        printf("%.2f C\n",mathC(num));
         system("pause");
         return 0;
     }
@@ -34,13 +44,7 @@ int main()
     {
         printf("Enter the tempature: "); //asks for the tempature
         scanf_s("%f", &num);    //takes the input
-        float CalC = num * 1.8 + 32; //does the conversion of Celsius to Fahernheit
-        if (round((float)(100 * CalC)) / 100) {   //checks if the conveted number has a zero at the end second decimal point
-            printf("%.1f F\n", CalC); // if the end is 0 then only print 1 decimal point
-        }
-        else {
-            printf("%.2f F\n", CalC);  //if the end isn't 0 print 2 decimal points
-        }
+		printf("%.2f F\n", mathF(num));
         system("pause");
         return 0;
     }
@@ -50,3 +54,4 @@ int main()
        goto start;
     }
 }
+
