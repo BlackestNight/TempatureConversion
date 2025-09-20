@@ -2,18 +2,19 @@
 #include <cstdlib>
 #include <math.h>
 char in;
-float num;
+float f;
+float c;
 
-float mathF(float num) {
+float toCelsius(float f) {
 	float resultF;
-	float CalF = (num - 32) * .5556;
+	float CalF = (f - 32) * .5556;
     resultF = round((float)(100 * CalF)) / 100;
 	return resultF;
 }
 
-float mathC(float num) {
+float toFahrenheit(float c) {
 	float resultC;
-    float CalC = num * 1.8 + 32;
+    float CalC = c * 1.8 + 32;
     resultC = round((float)(100 * CalC)) / 100;
 	return resultC;
 }
@@ -34,8 +35,8 @@ int main()
     if (in == 'F' || in == 'f') //remember use single quotes when in compaison of char
     {
         printf("Enter the Tempature: ");
-        scanf_s("%f", &num);
-        printf("%.2f C\n",mathC(num));
+        scanf_s("%f", &f);
+        printf("%.2f C\n",toCelsius(f));
         system("pause");
         return 0;
     }
@@ -43,8 +44,8 @@ int main()
     else if (in == 'C' || in == 'c')
     {
         printf("Enter the tempature: "); //asks for the tempature
-        scanf_s("%f", &num);    //takes the input
-		printf("%.2f F\n", mathF(num));
+        scanf_s("%f", &c);    //takes the input
+		printf("%.2f F\n", toFahrenheit(c));
         system("pause");
         return 0;
     }
